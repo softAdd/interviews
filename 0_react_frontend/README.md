@@ -1,6 +1,6 @@
 ## Кастомный чекбокс
 
-[checkbox](https://github.com/softAdd/competent-layout/tree/master/checkbox)
+[checkbox](https://github.com/softAdd/competent-layout/tree/master/checkbox): `label(input:state -> css(+) -> span[input checkbox]) = checkbox`.
 
 ## Плавное увеличение CSS без смещения соседних элементов
 
