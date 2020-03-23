@@ -2,7 +2,7 @@
 
 ```jsx
 // На каждое изменение, вызывается setInputState.
-const component = () => {
+const controlledComponent = () => {
     const [inputState, setInputState] = useState('');
 
     const handleChange = (evt) => {
@@ -33,3 +33,54 @@ const uncotrolledComponent = () => {
     )
 }
 ```
+
+**Хороший пример односоставных условий**
+
+```jsx
+const appComponent = ({ isRight }) => {
+    return (
+        <>
+            {isRight && <RightComponent>}
+            {!isRight && <WrongComponent>}
+        </>
+    )
+}
+```
+
+
+**Замена bind при вызове методов компонентов**
+
+```jsx
+// экспериментальный синтаксис общедоступных полей классов
+class LoginButton extends React.Component {
+    handleClick = () => {
+        console.log('button is pressed');
+    }
+
+    render() {
+        return (
+            <button onClick={this.handleClick}>
+                Press me
+            </button>
+        )
+    }
+}
+// с использование стрелочных функций
+class LoginButton extends React.Component {
+    handleClick() {
+        console.log('button is pressed');
+    }
+
+    render() {
+        return (
+            <button onClick={(evt) => this.handleClick(evt)}>
+                Press me
+            </button>
+        )
+    }
+}
+```
+
+**Хороший пример роутинга**
+
+[github, artbocha](https://github.com/artbocha/react-redux-reactRouter/tree/master/src)
